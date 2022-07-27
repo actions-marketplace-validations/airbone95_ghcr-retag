@@ -1,0 +1,25 @@
+name: ghcr-retag
+author: airbone95 <airbone95@users.noreply.github.com>
+description: retag docker images in ghcr without pulling
+branding:
+  icon: 'box'
+  color: 'blue'
+inputs:
+  old_tag:
+    description: the old tag that should recieve the new tag (old tag will NOT be deleted)
+    required: true
+  new_tag:
+    description: the new tag you want to set on the old tag image
+    required: true
+  ghcr_username:
+    description: username to login to ghcr
+    required: true
+  ghcr_password:
+    description: password to login to ghcr
+    required: true
+  ghcr_repo:
+    description: image repo in ghcr
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
